@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Music, Mic, Radio, Sparkles } from "lucide-react";
 import { PageLayout, seoMeta } from "@/components/page-layout";
-import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
+import stmLogo from "@/assets/soletrust-media-logo.png";
 
 const TITLE = "STM Music Group — Artist Management, Marketing & Distribution";
 const DESC = "STM Music Group is the music arm of Sole Trust Media — building careers for artists through management, marketing, distribution, events and brand partnerships.";
 
 export const Route = createFileRoute("/stm-music-group")({
-  head: () => seoMeta({ title: TITLE, description: DESC, path: "/stm-music-group", ogImage: stmLogo.url }),
+  head: () => seoMeta({ title: TITLE, description: DESC, path: "/stm-music-group", ogImage: stmLogo }),
   component: StmMusicPage,
 });
 

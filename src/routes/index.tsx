@@ -17,7 +17,7 @@ import InfiniteLoop from "@/components/sections/InfiniteLoop";
 import AiSection from "@/components/sections/AiSection";
 import FooterSection from "@/components/sections/FooterSection";
 
-import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
+import stmLogo from "@/assets/soletrust-media-logo.png";
 
 const HOME_TITLE = "Sole Trust Media — Branding, Marketing, Tech & Talent Growth Partner";
 const HOME_DESC = "Sole Trust Media is a modern growth company partnering with ambitious brands, startups, artists and creators across branding, marketing, technology, and talent management.";
@@ -35,14 +35,14 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { property: "og:site_name", content: "Sole Trust Media" },
-      { property: "og:image", content: stmLogo.url },
+      { property: "og:image", content: stmLogo },
       { property: "og:image:alt", content: "Sole Trust Media" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@soletrustmedia" },
       { name: "twitter:creator", content: "@soletrustmedia" },
       { name: "twitter:title", content: HOME_TITLE },
       { name: "twitter:description", content: HOME_DESC },
-      { name: "twitter:image", content: stmLogo.url },
+      { name: "twitter:image", content: stmLogo },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/")({
           "@type": "Organization",
           name: "Sole Trust Media",
           url: "/",
-          logo: stmLogo.url,
+          logo: stmLogo,
           description: HOME_DESC,
           sameAs: [
             "https://www.instagram.com/soletrustmedia",

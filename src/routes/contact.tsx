@@ -2,13 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Instagram, Calendar } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { PageLayout, seoMeta } from "@/components/page-layout";
-import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
+import stmLogo from "@/assets/soletrust-media-logo.png";
 
 const TITLE = "Contact — Talk to Sole Trust Media";
 const DESC = "Tell us what you're building. We'll come back within one business day with a plan, a partner, and a path forward. Email soletrustmedia@gmail.com or book a discovery call.";
 
 export const Route = createFileRoute("/contact")({
-  head: () => seoMeta({ title: TITLE, description: DESC, path: "/contact", ogImage: stmLogo.url }),
+  head: () => seoMeta({ title: TITLE, description: DESC, path: "/contact", ogImage: stmLogo }),
   component: ContactPage,
 });
 

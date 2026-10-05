@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ExternalLink } from "lucide-react";
 import { PageLayout, seoMeta } from "@/components/page-layout";
-import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
+import stmLogo from "@/assets/soletrust-media-logo.png";
 
 const TITLE = "Projects — Selected Client Work | Sole Trust Media";
 const DESC = "A selection of live products, brands and campaigns built end-to-end by Sole Trust Media — from first sketch to launch day.";
 
 export const Route = createFileRoute("/projects")({
-  head: () => seoMeta({ title: TITLE, description: DESC, path: "/projects", ogImage: stmLogo.url }),
+  head: () => seoMeta({ title: TITLE, description: DESC, path: "/projects", ogImage: stmLogo }),
   component: ProjectsPage,
 });
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Instagram, Mail } from 'lucide-react';
-import stmLogo from '@/assets/soletrust-media-logo.png.asset.json';
+import stmLogo from '@/assets/soletrust-media-logo.png';
 
 const NAV_LINKS = [
   { name: 'WORK', href: '#work' },
@@ -76,9 +76,9 @@ export default function Navigation() {
           {/* Logo */}
           <a href="#top" onClick={handleLogoClick} className="relative z-50 flex items-center outline-none">
             <motion.img 
-              src={stmLogo.url} 
+              src={stmLogo} 
               alt="Sole Trust Media"
-              className="h-10 w-auto object-contain"
+              className="h-16 w-16 rounded-full object-cover"
               animate={showEasterEgg ? { 
                 scale: [1, 1.2, 0.9, 1.1, 1],
                 filter: [

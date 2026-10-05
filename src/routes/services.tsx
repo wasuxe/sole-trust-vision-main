@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Palette, Camera, Megaphone, TrendingUp, Code, Search, Music } from "lucide-react";
 import { PageLayout, seoMeta } from "@/components/page-layout";
-import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
+import stmLogo from "@/assets/soletrust-media-logo.png";
 
 const TITLE = "Services — Branding, Marketing, Development & Talent | Sole Trust Media";
 const DESC = "End-to-end services for ambitious brands and creators: brand strategy, creative content, social media, performance marketing, web development, SEO, and talent management.";
 
 export const Route = createFileRoute("/services")({
-  head: () => seoMeta({ title: TITLE, description: DESC, path: "/services", ogImage: stmLogo.url }),
+  head: () => seoMeta({ title: TITLE, description: DESC, path: "/services", ogImage: stmLogo }),
   component: ServicesPage,
 });
 

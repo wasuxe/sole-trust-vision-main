@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 import { Link } from '@tanstack/react-router';
 import { Instagram, Mail } from 'lucide-react';
-import stmLogo from '@/assets/soletrust-media-logo.png.asset.json';
+import stmLogo from '@/assets/soletrust-media-logo.png';
 
 // --- Particle Background ---
 const Particles = () => {
@@ -164,7 +164,7 @@ const FooterSection = () => {
           {/* Left Column */}
           <div className="md:col-span-6 flex flex-col items-start">
             <Link to="/" className="mb-6 inline-block">
-              <img src={stmLogo.url} alt="Sole Trust Media" className="h-10 w-auto object-contain" />
+              <img src={stmLogo} alt="Sole Trust Media" className="h-16 w-16 rounded-full object-cover" />
             </Link>
             <p className="text-xl text-foreground/90 font-medium mb-8 max-w-sm">
               Building Brands. Empowering Creators. Driving Growth.

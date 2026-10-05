@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageLayout, seoMeta } from "@/components/page-layout";
-import stmLogo from "@/assets/soletrust-media-logo.png.asset.json";
+import stmLogo from "@/assets/soletrust-media-logo.png";
 
 const TITLE = "Careers — Join Sole Trust Media";
 const DESC = "Join a small, senior team of strategists, designers, engineers and marketers building brands people remember. Open, remote-friendly, and outcome-obsessed.";
 
 export const Route = createFileRoute("/careers")({
-  head: () => seoMeta({ title: TITLE, description: DESC, path: "/careers", ogImage: stmLogo.url }),
+  head: () => seoMeta({ title: TITLE, description: DESC, path: "/careers", ogImage: stmLogo }),
   component: CareersPage,
 });
 
