@@ -131,7 +131,7 @@ const GrowthEcosystem = () => {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                     animate={{
-                      stroke: isHovered ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.1)",
+                      stroke: isHovered ? "rgba(178,132,76,0.65)" : "rgba(145,111,70,0.2)",
                       strokeWidth: isHovered ? 2 : 1.5,
                     }}
                     transition={{ duration: 0.3 }}
@@ -144,14 +144,14 @@ const GrowthEcosystem = () => {
           {/* Central Node */}
           <div className="absolute z-10 flex items-center justify-center">
             {/* Pulsing ring */}
-            <div className="absolute w-32 h-32 rounded-full border border-white/20 animate-ping opacity-20" style={{ animationDuration: '3s' }} />
-            <div className="absolute w-40 h-40 rounded-full border border-white/10 animate-ping opacity-10" style={{ animationDuration: '3s', animationDelay: '0.5s' }} />
+            <div className="absolute w-32 h-32 rounded-full border border-gold/30 animate-ping opacity-20" style={{ animationDuration: '3s' }} />
+            <div className="absolute w-40 h-40 rounded-full border border-gold/20 animate-ping opacity-10" style={{ animationDuration: '3s', animationDelay: '0.5s' }} />
             
             <motion.div 
-              className="relative w-32 h-32 rounded-full bg-surface border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.1)] backdrop-blur-md"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(255,255,255,0.2)" }}
+              className="relative w-32 h-32 rounded-full bg-surface border border-gold/30 flex items-center justify-center shadow-[0_0_30px_rgba(178,132,76,0.12)] backdrop-blur-md"
+              whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(178,132,76,0.22)" }}
             >
-              <div className="text-center font-display font-bold text-white tracking-wider text-sm">
+              <div className="text-center font-display font-bold text-foreground tracking-wider text-sm">
                 YOUR<br/>BRAND
               </div>
             </motion.div>
@@ -182,12 +182,12 @@ const GrowthEcosystem = () => {
                 <motion.div 
                   className="relative flex items-center justify-center w-14 h-14 rounded-full bg-surface border border-border cursor-pointer backdrop-blur-sm"
                   animate={{
-                    borderColor: isHovered ? "rgba(255,255,255,0.8)" : "var(--border)",
-                    boxShadow: isHovered ? "0 0 20px rgba(255,255,255,0.2)" : "none",
+                    borderColor: isHovered ? "var(--gold-light)" : "var(--border)",
+                    boxShadow: isHovered ? "0 0 20px rgba(178,132,76,0.2)" : "none",
                     scale: isHovered ? 1.1 : 1,
                   }}
                 >
-                  <div className={`text-foreground/70 transition-colors ${isHovered ? 'text-white' : ''}`}>
+                  <div className={`text-foreground/70 transition-colors ${isHovered ? 'text-gold' : ''}`}>
                     {service.icon}
                   </div>
                 </motion.div>
@@ -203,7 +203,7 @@ const GrowthEcosystem = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 5, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full mt-6 left-1/2 -translate-x-1/2 w-48 p-3 rounded-lg bg-surface border border-white/10 shadow-xl backdrop-blur-md z-30 pointer-events-none"
+                      className="absolute top-full mt-6 left-1/2 -translate-x-1/2 w-48 p-3 rounded-lg bg-surface border border-border shadow-xl backdrop-blur-md z-30 pointer-events-none"
                     >
                       <p className="text-xs text-foreground/70 text-center leading-relaxed">
                         {service.description}
@@ -219,15 +219,15 @@ const GrowthEcosystem = () => {
         {/* Mobile Vertical List Layout */}
         <div className="w-full flex flex-col gap-3 md:hidden mt-8">
           <div className="flex justify-center mb-8">
-            <div className="relative w-28 h-28 rounded-full bg-surface border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.1)]">
-              <div className="absolute w-full h-full rounded-full border border-white/20 animate-ping opacity-20" style={{ animationDuration: '3s' }} />
-              <div className="text-center font-display font-bold text-white tracking-wider text-xs">
+            <div className="relative w-28 h-28 rounded-full bg-surface border border-gold/30 flex items-center justify-center shadow-[0_0_30px_rgba(178,132,76,0.12)]">
+              <div className="absolute w-full h-full rounded-full border border-gold/30 animate-ping opacity-20" style={{ animationDuration: '3s' }} />
+              <div className="text-center font-display font-bold text-foreground tracking-wider text-xs">
                 YOUR<br/>BRAND
               </div>
             </div>
           </div>
           
-          <div className="h-8 w-px bg-gradient-to-b from-white/20 to-transparent mx-auto mb-4" />
+          <div className="h-8 w-px bg-gradient-to-b from-gold/30 to-transparent mx-auto mb-4" />
 
           {services.map((service, index) => {
             const isExpanded = expandedMobile === service.id;
@@ -243,11 +243,11 @@ const GrowthEcosystem = () => {
                 onClick={() => setExpandedMobile(isExpanded ? null : service.id)}
               >
                 <div className="p-4 flex items-center gap-4">
-                  <div className={`p-2 rounded-full bg-white/5 border border-white/10 transition-colors ${isExpanded ? 'border-white/40 text-white' : 'text-foreground/70'}`}>
+                  <div className={`p-2 rounded-full bg-gold/5 border border-border transition-colors ${isExpanded ? 'border-gold/50 text-gold' : 'text-foreground/70'}`}>
                     {service.icon}
                   </div>
                   <h3 className="font-semibold text-sm uppercase tracking-wide flex-1">{service.title}</h3>
-                  <div className="w-5 h-5 flex items-center justify-center text-white/30">
+                  <div className="w-5 h-5 flex items-center justify-center text-muted-foreground/60">
                     <motion.div 
                       animate={{ rotate: isExpanded ? 45 : 0 }}
                       className="w-3 h-px bg-current absolute"

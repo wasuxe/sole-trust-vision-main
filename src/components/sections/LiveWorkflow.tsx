@@ -214,7 +214,7 @@ const StageItem = ({ stage, index, expandedId, setExpandedId }: any) => {
                   exit={{ opacity: 0, height: 0 }}
                   className="overflow-hidden"
                 >
-                  <p className={`text-white/60 text-sm font-sans mt-2 ${!isEven ? 'md:text-right' : ''}`}>
+                  <p className={`text-muted-foreground text-sm font-sans mt-2 ${!isEven ? 'md:text-right' : ''}`}>
                     {stage.description}
                   </p>
                 </motion.div>
@@ -261,7 +261,7 @@ export default function LiveWorkflow() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/60 mt-6 max-w-2xl font-sans text-lg text-balance"
+            className="text-muted-foreground mt-6 max-w-2xl font-sans text-lg text-balance"
           >
             A visual walkthrough of how we take brands from brief to growth.
           </motion.p>
@@ -294,7 +294,7 @@ export default function LiveWorkflow() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-white/40 text-sm mt-32 uppercase tracking-widest font-sans"
+          className="text-center text-muted-foreground/70 text-sm mt-32 uppercase tracking-widest font-sans"
         >
           This visualization demonstrates our agency process workflow.
         </motion.p>

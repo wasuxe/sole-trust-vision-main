@@ -13,7 +13,7 @@ const nodes = [
 export default function InfiniteLoop() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-background to-background pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/10 via-background to-background pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
         <motion.div
@@ -32,8 +32,8 @@ export default function InfiniteLoop() {
           <svg viewBox="-300 -300 600 600" className="w-full h-full overflow-visible">
             <defs>
               <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="rgba(255,255,255,0.05)" />
-                <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                <stop offset="0%" stopColor="rgba(178,132,76,0.12)" />
+                <stop offset="100%" stopColor="rgba(178,132,76,0)" />
               </radialGradient>
             </defs>
             
@@ -43,14 +43,14 @@ export default function InfiniteLoop() {
               animate={{ rotate: 360 }}
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             >
-              <circle cx="0" cy="0" r="180" fill="none" strokeWidth="2" strokeDasharray="8 8" className="stroke-white/10" />
+              <circle cx="0" cy="0" r="180" fill="none" strokeWidth="2" strokeDasharray="8 8" className="stroke-gold/30" />
             </motion.g>
 
             <motion.g
               animate={{ rotate: 360 }}
               transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
             >
-              <circle cx="0" cy="-180" r="6" fill="white" style={{ filter: "drop-shadow(0 0 10px rgba(255,255,255,0.8))" }} />
+              <circle cx="0" cy="-180" r="6" fill="var(--gold)" style={{ filter: "drop-shadow(0 0 10px rgba(178,132,76,0.55))" }} />
             </motion.g>
 
             {nodes.map((node, i) => {
@@ -67,17 +67,17 @@ export default function InfiniteLoop() {
                     cx={x} 
                     cy={y} 
                     r="20" 
-                    className="stroke-white/20 transition-all duration-300 hover:stroke-white/60 cursor-pointer" 
-                    style={{ fill: 'var(--background, #09090b)' }}
+                    className="stroke-gold/40 transition-all duration-300 hover:stroke-gold cursor-pointer" 
+                    style={{ fill: 'var(--background)' }}
                     strokeWidth="2" 
                   />
-                  <circle cx={x} cy={y} r="4" className="fill-white/50 pointer-events-none" />
+                  <circle cx={x} cy={y} r="4" className="fill-gold pointer-events-none" />
                   <text 
                     x={txtX} 
                     y={txtY} 
                     textAnchor="middle" 
                     dominantBaseline="middle" 
-                    className="text-xs md:text-sm fill-white/60 font-sans tracking-widest pointer-events-none font-medium"
+                    className="text-xs md:text-sm fill-foreground/70 font-sans tracking-widest pointer-events-none font-medium"
                   >
                     {node.label}
                   </text>
@@ -93,7 +93,7 @@ export default function InfiniteLoop() {
           viewport={{ once: true }}
           className="text-center max-w-3xl"
         >
-          <p className="text-2xl md:text-4xl font-display font-medium text-white/90 leading-tight">
+          <p className="text-2xl md:text-4xl font-display font-medium text-foreground leading-tight">
             Marketing isn't a campaign anymore.<br className="hidden md:block" /> It's a system.
           </p>
         </motion.div>

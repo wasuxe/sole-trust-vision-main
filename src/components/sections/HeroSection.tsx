@@ -212,7 +212,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="top" className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden bg-[var(--background)] text-white">
+    <section id="top" className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden bg-[#27231e] text-white">
       {/* 3D Canvas Network Background */}
       <ParticleNetwork />
       <div className="pointer-events-none absolute inset-0 z-[1] opacity-35 md:opacity-55" aria-hidden="true">

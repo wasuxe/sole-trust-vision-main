@@ -137,16 +137,16 @@ function OverviewTab() {
         <div className="h-[300px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={campaignData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-              <XAxis dataKey="day" stroke="rgba(255,255,255,0.2)" fontSize={12} tickLine={false} axisLine={false} />
-              <YAxis yAxisId="left" stroke="rgba(255,255,255,0.2)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(val) => `${val / 1000}k`} />
-              <YAxis yAxisId="right" orientation="right" stroke="rgba(255,255,255,0.2)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(val) => `${val / 1000}k`} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
+              <XAxis dataKey="day" stroke="var(--muted-foreground)" fontSize={12} tickLine={false} axisLine={false} />
+              <YAxis yAxisId="left" stroke="var(--muted-foreground)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(val) => `${val / 1000}k`} />
+              <YAxis yAxisId="right" orientation="right" stroke="var(--muted-foreground)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(val) => `${val / 1000}k`} />
               <Tooltip
-                contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px' }}
-                itemStyle={{ color: '#fff' }}
+                contentStyle={{ backgroundColor: 'rgba(255,252,245,0.96)', border: '1px solid rgba(145,111,70,0.25)', borderRadius: '8px' }}
+                itemStyle={{ color: 'var(--foreground)' }}
               />
-              <Line yAxisId="left" type="monotone" dataKey="reach" name="Reach" stroke="#ffffff" strokeWidth={2} dot={false} />
-              <Line yAxisId="right" type="monotone" dataKey="engagement" name="Engagement" stroke="rgba(255,255,255,0.3)" strokeWidth={2} dot={false} />
+              <Line yAxisId="left" type="monotone" dataKey="reach" name="Reach" stroke="var(--gold)" strokeWidth={2} dot={false} />
+              <Line yAxisId="right" type="monotone" dataKey="engagement" name="Engagement" stroke="var(--foreground)" strokeOpacity={0.45} strokeWidth={2} dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -160,8 +160,8 @@ function OverviewTab() {
             <ResponsiveContainer width="100%" height={150}>
               <BarChart data={contentData} layout="vertical" margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
                 <XAxis type="number" hide />
-                <YAxis dataKey="name" type="category" stroke="rgba(255,255,255,0.5)" fontSize={11} axisLine={false} tickLine={false} />
-                <Bar dataKey="value" fill="#ffffff" radius={[0, 4, 4, 0]} barSize={16} />
+                <YAxis dataKey="name" type="category" stroke="var(--muted-foreground)" fontSize={11} axisLine={false} tickLine={false} />
+                <Bar dataKey="value" fill="var(--gold)" radius={[0, 4, 4, 0]} barSize={16} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -174,11 +174,11 @@ function OverviewTab() {
               <AreaChart data={audienceData}>
                 <defs>
                   <linearGradient id="colorGrowth" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#ffffff" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="#ffffff" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="var(--gold)" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="var(--gold)" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
-                <Area type="monotone" dataKey="growth" stroke="#ffffff" fillOpacity={1} fill="url(#colorGrowth)" />
+                <Area type="monotone" dataKey="growth" stroke="var(--gold)" fillOpacity={1} fill="url(#colorGrowth)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -252,7 +252,7 @@ function SimpleDashboard({ tab, metric1, val1, metric2, val2 }: any) {
         <div className="w-full h-full opacity-30 mt-10">
            <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={campaignData}>
-              <Area type="monotone" dataKey="engagement" stroke="#ffffff" strokeWidth={2} fillOpacity={0.1} fill="#ffffff" />
+              <Area type="monotone" dataKey="engagement" stroke="var(--gold)" strokeWidth={2} fillOpacity={0.1} fill="var(--gold)" />
             </AreaChart>
           </ResponsiveContainer>
         </div>

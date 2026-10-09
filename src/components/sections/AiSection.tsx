@@ -67,7 +67,7 @@ const termVariants = {
 
 export default function AiSection() {
   return (
-    <section className="py-24 md:py-32 relative border-t border-white/5 bg-background">
+    <section className="py-24 md:py-32 relative border-t border-border/50 bg-background">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -96,22 +96,22 @@ export default function AiSection() {
                 </motion.div>
                 {index < arr.length - 1 && (
                   <motion.div variants={termVariants}>
-                    <Plus className="text-white/30 w-6 h-6 md:w-8 md:h-8" />
+                    <Plus className="text-gold/60 w-6 h-6 md:w-8 md:h-8" />
                   </motion.div>
                 )}
               </React.Fragment>
             ))}
             
             <motion.div variants={termVariants} className="my-4 md:my-0 md:ml-4 md:mr-2">
-              <Equal className="text-white/50 w-8 h-8 md:w-10 md:h-10" />
+              <Equal className="text-gold w-8 h-8 md:w-10 md:h-10" />
             </motion.div>
 
             <motion.div 
               variants={termVariants} 
-              className="rounded-2xl border border-white/30 bg-white/10 backdrop-blur-md p-6 md:p-10 flex items-center justify-center relative overflow-hidden group shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+              className="rounded-2xl border border-gold/30 bg-gradient-gold p-6 md:p-10 flex items-center justify-center relative overflow-hidden group shadow-glow"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <span className="font-display font-bold text-3xl md:text-4xl text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              <span className="font-display font-bold text-3xl md:text-4xl text-primary-foreground">
                 GROWTH
               </span>
             </motion.div>
@@ -127,11 +127,11 @@ export default function AiSection() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
         >
           {capabilities.map((cap, i) => (
-            <motion.div key={i} variants={itemVariants} className="group p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <cap.icon className="w-6 h-6 text-white/80" />
+            <motion.div key={i} variants={itemVariants} className="group p-6 rounded-2xl border border-border/70 bg-surface/70 backdrop-blur-xl transition-all hover:-translate-y-1 hover:border-gold/40">
+              <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <cap.icon className="w-6 h-6 text-gold" />
               </div>
-              <h3 className="text-xl font-display font-semibold text-white/90 mb-3">{cap.title}</h3>
+              <h3 className="text-xl font-display font-semibold text-foreground mb-3">{cap.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{cap.description}</p>
             </motion.div>
           ))}

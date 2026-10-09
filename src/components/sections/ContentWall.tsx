@@ -56,7 +56,7 @@ export default function ContentWall() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg md:text-xl text-white/60 text-center max-w-2xl font-sans"
+          className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl font-sans"
         >
           A glimpse into the creative work we produce across platforms.
         </motion.p>
@@ -69,14 +69,14 @@ export default function ContentWall() {
             key={cat}
             onClick={() => setActiveTab(cat)}
             className={`text-xs tracking-widest uppercase font-medium px-4 py-2 relative transition-colors ${
-              activeTab === cat ? 'text-white' : 'text-white/40 hover:text-white/80'
+              activeTab === cat ? 'text-gold' : 'text-muted-foreground hover:text-foreground'
             }`}
           >
             {cat}
             {activeTab === cat && (
               <motion.div 
                 layoutId="activeTabUnderline"
-                className="absolute left-0 bottom-0 w-full h-[1px] bg-white"
+                className="absolute left-0 bottom-0 w-full h-[1px] bg-gold"
               />
             )}
           </button>
@@ -137,7 +137,7 @@ export default function ContentWall() {
         <div className="mt-10 text-center">
           <Link
             to="/projects"
-            className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-white/80 transition-colors hover:border-white/40 hover:text-white"
+            className="inline-flex items-center rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium text-foreground/80 backdrop-blur-md transition-colors hover:border-gold/50 hover:text-gold"
           >
             Explore selected projects
           </Link>
